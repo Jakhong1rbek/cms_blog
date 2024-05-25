@@ -11,14 +11,14 @@ function Mobile() {
 	const pathName = usePathname()
 	return (
 		<Sheet>
-			<SheetTrigger asChild>
+			<SheetTrigger asChild className='flex md:hidden'>
 				<Button size={'icon'} variant={'ghost'}>
 					<Menu />
 				</Button>
 			</SheetTrigger>
 			<SheetContent side={'left'}>
 				<Link href={'/'}>
-					<h1 className='text-4xl font-creteRound'>Sammi</h1>
+					<h1 className='text-4xl font-creteRound'>CodeCast</h1>
 				</Link>
 				<Separator className='my-3' />
 				<div className='flex flex-col space-y-3'>
