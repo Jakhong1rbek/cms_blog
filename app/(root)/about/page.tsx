@@ -1,10 +1,11 @@
-import { authors } from '@/app/constants'
 import AuthorCard from '@/components/cards/author-card'
+import { getAuthors } from '@/service/authors.service'
 import { Dot, Home } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function AboutPAge() {
+async function AboutPAge() {
+	const authors = await getAuthors()
 	return (
 		<div className='max-w-6xl mx-auto'>
 			<div className='relative min-h-[40vh] flex flex-col items-center justify-center'>
@@ -75,9 +76,9 @@ function AboutPAge() {
 			</h2>
 
 			<div className='flex justify-around max-md:flex-col max-md:space-y-4 max-md:items-center'>
-				{authors.map(c => (
-					<AuthorCard key={c.name} {...c} />
-				))}
+				{authors.map(item => {
+					return <AuthorCard key={item.name} {...item} />
+				})}
 			</div>
 		</div>
 	)
