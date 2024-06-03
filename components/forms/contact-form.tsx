@@ -68,7 +68,7 @@ Message: ${values.message}`,
 								<Textarea
 									disabled={isLoading}
 									className='resize-none h-32'
-									placeholder='Ask question or just say Hi'
+									placeholder='Message'
 									{...field}
 								/>
 							</FormControl>

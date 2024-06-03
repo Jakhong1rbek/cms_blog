@@ -1,8 +1,12 @@
 import BlockCard from '@/components/cards/block-card'
 import { getBlogs } from '@/service/blog.service'
 import { Dot, Home } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
+export const metadata: Metadata = {
+	title: 'All Blogs',
+}
 async function BlogsPage() {
 	const blogs = await getBlogs()
 	return (

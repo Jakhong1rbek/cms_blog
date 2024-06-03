@@ -4,6 +4,8 @@ import { getBlogs } from '@/service/blog.service'
 
 async function HomePage() {
 	const blogs = await getBlogs()
+	console.log(blogs)
+
 	return (
 		<div className='max-w-6xl mx-auto'>
 			<div className='relative min-h-[60vh] flex items-center justify-center'>
@@ -15,11 +17,19 @@ async function HomePage() {
 			<h2 className='text-4xl text-center section-title font-creteRound'>
 				<span>Recent Posts</span>
 			</h2>
-			<div className='flex flex-col space-y-24 mt-24'>
-				{blogs.map(blog => (
-					<BlockCard key={blog.title} {...blog} />
-				))}
-			</div>
+			{blogs.length === 0 ? (
+				<div className='flex items-center w-full lg:h-[40vh] md:h-[30vh] h-[20vh] bg-secondary rounded-md mt-20 justify-center'>
+					<h1 className='lg:text-4xl md:text-3xl sm:text-1 p-4 bg-destructive rounded-md '>
+						Blogs have not been added yet!
+					</h1>
+				</div>
+			) : (
+				<div className='flex flex-col space-y-24 mt-24'>
+					{blogs.map(blog => (
+						<BlockCard key={blog.title} {...blog} />
+					))}
+				</div>
+			)}
 		</div>
 	)
 }

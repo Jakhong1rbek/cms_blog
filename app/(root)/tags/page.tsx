@@ -1,7 +1,12 @@
 import CategoriesTags from '@/components/cards/categories-tags'
 import { getTags } from '@/service/tag.service'
 import { Dot, Home } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+	title: 'All Tags',
+}
 
 async function Page() {
 	const tags = await getTags()

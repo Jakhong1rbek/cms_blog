@@ -2,6 +2,7 @@
 import { navLinks } from '@/app/constants'
 import ModeToggle from '@/components/shared/mode-toggle'
 import { cn } from '@/lib/utils'
+import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Mobile from './ mobile'
@@ -9,6 +10,8 @@ import GlobalSearch from './global-search'
 
 function Navbar() {
 	const pathName = usePathname()
+	const { setTheme, systemTheme } = useTheme()
+
 	return (
 		<div className='h-[10vh] backdrop-blur-sm border-b fixed z-50 inset-0 bg-background'>
 			<div className='container max-w-6xl mx-auto h-[10vh] w-full flex items-center justify-between '>

@@ -81,3 +81,6 @@
 .dark .section-title span {
 	background-image: url("data:image/svg+xml,%3Csvg width='298' height='32' viewBox='0 0 298 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 17.1944C62.6418 7.28318 174.478 -8.49028 296 27' stroke='%230d364d' stroke-width='9'/%3E%3C/svg%3E%0A");
 }
+.logo_img {
+	background-image: url('/logo_dark.png');
+}

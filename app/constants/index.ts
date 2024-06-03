@@ -14,18 +14,18 @@ export const navLinks = [
 	{ name: 'Contact', route: '/contact', icon: Contact2 },
 ]
 
-export const popularCategories = [
-	{ name: 'Front End', slug: 'front-end' },
-	{ name: 'Back End', slug: 'back-end' },
-	{ name: 'Full Stack', slug: 'full-stack' },
-	{ name: "Sun'iy Intelekt", slug: 'artificial-intelligence' },
+export const popularTags = [
+	{ name: 'Front End', slug: 'frontend' },
+	{ name: 'Back End', slug: 'backend' },
+	{ name: 'Full Stack', slug: 'fullstack' },
+	{ name: "Sun'iy Intelekt", slug: 'artificialintelligence' },
 ]
 
-export const popularTags = [
-	{ name: 'ReactJS', slug: 'react-js' },
-	{ name: 'JavaScript', slug: 'java-script' },
-	{ name: 'NodeJS', slug: 'node-js' },
-	{ name: 'NextJS', slug: 'next-js' },
+export const popularCategories = [
+	{ name: 'ReactJS', slug: 'reactjs' },
+	{ name: 'JavaScript', slug: 'javascript' },
+	{ name: 'NodeJS', slug: 'nodejs' },
+	{ name: 'NextJS', slug: 'nextjs' },
 ]
 
 export const blogs = [
