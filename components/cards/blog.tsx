@@ -10,12 +10,12 @@ interface Props extends IBlog {
 	isVertical?: boolean
 }
 
-function BlockCard(blog: Props) {
+function BlogCard(blog: Props) {
 	return (
 		<div
 			className={cn(
-				'grid gap-4 group  ',
-				blog.isVertical ? 'grid-cols-1' : 'md:grid-cols-2'
+				'grid gap-4 group',
+				blog.isVertical ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'
 			)}
 		>
 			<Link href={`/blogs/${blog.slug}`}>
@@ -29,10 +29,9 @@ function BlockCard(blog: Props) {
 					/>
 				</div>
 			</Link>
-
 			<div className='flex flex-col space-y-4'>
-				{/* Time info */}
-				<Link href={`/blogs/${blog.slug}`}>
+				<Link href={`/blogs/${blog.slug}`} className='flex flex-col space-y-4'>
+					{/* Time info */}
 					<div className='flex items-center gap-4'>
 						<div className='flex items-center gap-2'>
 							<CalendarDays className='w-5 h-5' />
@@ -44,6 +43,7 @@ function BlockCard(blog: Props) {
 							<p>{getReadingTime(blog.content.html)} min read</p>
 						</div>
 					</div>
+
 					{/* Title */}
 					<h2 className='text-3xl max-md:text-2xl font-creteRound group-hover:text-blue-500 transition-colors'>
 						{blog.title}
@@ -57,7 +57,7 @@ function BlockCard(blog: Props) {
 				<div className='flex items-center gap-4'>
 					<div className='flex items-center gap-2'>
 						<Image
-							src={'/author/thomas-macaulay.jpg'}
+							src={blog.author.image.url}
 							alt='author'
 							width={30}
 							height={30}
@@ -68,15 +68,15 @@ function BlockCard(blog: Props) {
 					<Dot />
 					<div className='flex items-center gap-2'>
 						<Link href={`/tags/${blog.tag.slug}`}>
-							<Badge variant={'secondary'}>
+							<Badge variant={'secondary'} role='button'>
 								<Tag className='w-3 h-3 me-2' />
 								{blog.tag.name}
 							</Badge>
 						</Link>
 						<Link href={`/categories/${blog.category.slug}`}>
-							<Badge variant={'outline'}>
+							<Badge variant={'outline'} role='button'>
 								<Layers2 className='w-3 h-3 me-2' />
-								{blog.category.slug}
+								{blog.category.name}
 							</Badge>
 						</Link>
 					</div>
@@ -86,4 +86,4 @@ function BlockCard(blog: Props) {
 	)
 }
 
-export default BlockCard
+export default BlogCard

@@ -1,4 +1,4 @@
-import BlockCard from '@/components/cards/block-card'
+import BlogCard from '@/components/cards/blog'
 import { getDetailedAuthor } from '@/service/authors.service'
 import Image from 'next/image'
 
@@ -30,7 +30,7 @@ async function Page({ params }: { params: { id: string } }) {
 			</h2>
 			<div className='flex flex-col space-y-24 mt-24'>
 				{author.blogs.map(blog => (
-					<BlockCard key={blog.title} {...blog} />
+					<BlogCard key={blog.title} {...blog} />
 				))}
 			</div>
 		</div>

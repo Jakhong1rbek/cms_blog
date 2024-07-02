@@ -10,9 +10,13 @@ export const getCategories = async () => {
 			categories {
 				name
 				slug
+				blogs {
+					id
+				}
 			}
 		}
 	`
+
 	const { categories } = await request<{ categories: ICategoryAndTags[] }>(
 		graphqlAPI,
 		query
@@ -55,10 +59,9 @@ export const getBlogsByCategory = cache(async (slug: string) => {
 			}
 		}
 	`
+
 	const { category } = await request<{
 		category: { blogs: IBlog[]; name: string }
-	}>(graphqlAPI, query, {
-		slug,
-	})
+	}>(graphqlAPI, query, { slug })
 	return category
 })

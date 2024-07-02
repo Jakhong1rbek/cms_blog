@@ -1,4 +1,4 @@
-import BlockCard from '@/components/cards/block-card'
+import BlogCard from '@/components/cards/blog'
 import { getBlogs } from '@/service/blog.service'
 import { Dot, Home } from 'lucide-react'
 import { Metadata } from 'next'
@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 }
 async function BlogsPage() {
 	const blogs = await getBlogs()
+	console.log(blogs)
+
 	return (
 		<div className='max-w-6xl mx-auto'>
 			<div className='relative min-h-[40vh] flex flex-col items-center justify-center'>
@@ -31,7 +33,7 @@ async function BlogsPage() {
 
 			<div className='grid grid-cols-2 max-md:grid-cols-1 gap-x-4 gap-y-24  mt-15'>
 				{blogs.map(blog => (
-					<BlockCard key={blog.title} {...blog} isVertical />
+					<BlogCard key={blog.title} {...blog} isVertical />
 				))}
 			</div>
 		</div>

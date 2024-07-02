@@ -66,9 +66,19 @@ function GlobalSearch() {
 					{isBlogs.length ? <Separator className='mt-3' /> : null}
 					<div className='flex flex-col space-y-2 mt-4'>
 						<div className='flex items-center gap-2'>
-							<p className='font-creteRound text-2xl'>
-								See posts by categories
-							</p>
+							<div className='flex items-center gap-2'>
+								<p className='font-creteRound text-2xl'>
+									See posts by categories
+								</p>
+								<Minus />
+								<Link
+									href={'/categories'}
+									className='text-blue-500 underline hover:text-blue-400'
+								>
+									See All
+								</Link>
+							</div>
+
 							<Minus />
 							<Link href={'/categories'}>
 								<DrawerClose>
